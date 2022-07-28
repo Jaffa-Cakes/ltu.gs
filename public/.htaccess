@@ -1,0 +1,66 @@
+# Force HTTPS site wide
+RewriteEngine On
+RewriteOptions inherit
+RewriteCond %{HTTP_HOST} ^(www\.)(.+) [OR]
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^(www\.)?(.+)
+RewriteRule ^ https://%2%{REQUEST_URI} [R=301,L]
+
+# Don't allow people to index directories
+Options -Indexes
+
+# BEGIN Compress text files
+<ifModule mod_deflate.c>
+  <filesMatch "\.(css|js|x?html?|php)$">
+    SetOutputFilter DEFLATE
+  </filesMatch>
+</ifModule>
+# END Compress text files
+
+# BEGIN Expire headers
+<ifModule mod_expires.c>
+  ExpiresActive On
+  
+  ExpiresByType image/x-icon "access plus 31557600 seconds"
+  ExpiresByType image/jpeg "access plus 31557600 seconds"
+  ExpiresByType image/jpg "access plus 31557600 seconds"
+  ExpiresByType image/png "access plus 31557600 seconds"
+  ExpiresByType image/gif "access plus 31557600 seconds"
+  ExpiresByType image/svg+xml "access plus 31557600 seconds"
+  ExpiresByType image/webp "access plus 31557600 seconds"
+  
+  ExpiresByType font/ttf "access plus 31557600 seconds"
+  ExpiresByType application/vnd.ms-fontobject "access plus 31557600 seconds"
+  ExpiresByType font/woff "access plus 31557600 seconds"
+  ExpiresByType font/woff2 "access plus 31557600 seconds"
+
+  ExpiresByType application/x-shockwave-flash "access plus 31557600 seconds"
+  ExpiresByType application/pdf "access plus 31557600 seconds"
+
+  ExpiresByType video/mp4 "access plus 31557600 seconds"
+  ExpiresByType video/mpeg "access plus 31557600 seconds"
+
+  ExpiresByType text/css "access plus 31557600 seconds"
+  ExpiresByType text/javascript "access plus 31557600 seconds"
+  ExpiresByType application/javascript "access plus 31557600 seconds"
+  ExpiresByType application/x-javascript "access plus 31557600 seconds"
+</ifModule>
+# END Expire headers
+
+
+# BEGIN Cache-Control Headers
+<ifModule mod_headers.c>
+  <filesMatch "\.(ico|jpe?g|png|gif|swf|svg|webp|ttf|woff|woff2|eot)$">
+    Header set Cache-Control "max-age=31557600, public"
+  </filesMatch>
+  <filesMatch "\.(pdf)$">
+    Header set Cache-Control "max-age=31557600, public"
+  </filesMatch>
+  <filesMatch "\.(css)$">
+    Header set Cache-Control "max-age=31557600, public"
+  </filesMatch>
+  <filesMatch "\.(js)$">
+    Header set Cache-Control "max-age=31557600, private"
+  </filesMatch>
+</ifModule>
+# END Cache-Control Headers
