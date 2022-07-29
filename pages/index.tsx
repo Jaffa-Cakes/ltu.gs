@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>LTU Gaming Society</title>
-        <meta name="description" content="The official La Trobe Gaming Society. Home to both casual and competitive gaming alongside social gatherings and events." />
+        <meta name="description" content="The official La Trobe Gaming Society, home to both casual and competitive gaming, alongside social gatherings and events." />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         </h1>
 
         <p className={styles.description}>
-          Casual and Competitive Video Game and Table Top Club
+          Casual and Competitive Video Game and Tabletop Club
         </p>
 
         <div className={styles.grid}>
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
           >
             <h2>Facebook &rarr;</h2>
             <p>
-              Follow our page and to see us in your feed!
+              Follow our page to see us in your feed!
             </p>
           </a>
 
@@ -59,17 +59,17 @@ const Home: NextPage = () => {
             href="https://forms.gle/jiPHBjTcxB2JgKJP9"
             className={styles.card}
           >
-            <h2>Student Member Signup &rarr;</h2>
-            <p>If you are a La Trobe Student, register for the club here.</p>
+            <h2>Student Member Sign-up &rarr;</h2>
+            <p>If you are a La Trobe student, register for the club here.</p>
           </a>
 
           <a
             href="https://forms.gle/joH2uJ5UcSNWVY8W7"
             className={styles.card}
           >
-            <h2>Associate Member Signup &rarr;</h2>
+            <h2>Associate Member Sign-up &rarr;</h2>
             <p>
-              If you are not a La Trobe Student, register for the club here.
+              If you are not a La Trobe student, register for the club here.
             </p>
           </a>
         </div>
