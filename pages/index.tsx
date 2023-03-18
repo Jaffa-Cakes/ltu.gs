@@ -56,7 +56,7 @@ const Home: NextPage = () => {
           </a>
 
           <a
-            href="https://forms.gle/jiPHBjTcxB2JgKJP9"
+            href="https://forms.gle/K5oJvYwaTFMnAfRB6"
             className={styles.card}
           >
             <h2>Student Member Sign-up &rarr;</h2>
@@ -64,7 +64,7 @@ const Home: NextPage = () => {
           </a>
 
           <a
-            href="https://forms.gle/joH2uJ5UcSNWVY8W7"
+            href="https://forms.gle/B8KAa4yF6XcMwie2A"
             className={styles.card}
           >
             <h2>Associate Member Sign-up &rarr;</h2>
